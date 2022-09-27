@@ -17,13 +17,16 @@ function App() {
     setData
   }
   return (
+    <div className="App">
     <BrowserRouter>
     <pokeContext.Provider value={pokeData}>
     <Header/>
     <Main/>      
     </pokeContext.Provider> 
     <Footer/>       
-    </BrowserRouter>
+    </BrowserRouter>      
+    </div>
+
 
   );
 }

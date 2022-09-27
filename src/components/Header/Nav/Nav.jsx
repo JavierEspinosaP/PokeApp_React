@@ -7,7 +7,6 @@ const Nav = () => {
       <Link className="nav-link" to='/'>Home</Link>
       <Link className="nav-link" to='/new'>Crea tu pokemon</Link>
       <Link className="nav-link" to='/search'>Buscar pokemons</Link>
-      {/* <Link className="nav-link" to='/pokemon/:id'>Detalle de pokemon</Link> */}
     </div>;
   }
 

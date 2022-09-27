@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
 
 @import '../utils/variables.scss';
 .App {
     text-align: center;
-    font-family: $font;
-    background-color:$brown;
+    letter-spacing: 4px;
+    font-family: 'Pokemon Solid', sans-serif;
 }
 
 .App-header {

@@ -1,31 +1,79 @@
+@import '../utils/variables.scss';
 
-
-.home{
+.home {
+    background-color: $bluegreen;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
-.cardContainer{
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    color:$yellow;
+    border-width: 3px;
+    background-color: $red;
     text-align: center;
     border-style: solid;
     padding: 5px;
-    margin: 5px;
-    min-width: 110px;
+    margin: 20px;
+    min-width: 175px;
     min-height: 80px;
+    height: 250px;
+    transition: 0.2s;
+    filter: brightness(85%);
 }
 
-#h1{
-    display: flex;
-    text-align: center;
-    justify-content: center;
+.cardContainer:hover{
+    box-shadow: $pink 0px 5px 15px;
+    filter: brightness(100%);
+}
+
+#cardImg{
+    width: 175px;
 }
 
 h3{
+    font-size: 17px;
+    color: $blue;
+    margin-top:-220px;
+    position: relative;
+}
+
+#h1 {
+
+    -webkit-text-stroke: 0.2px black; /* width and color */
+    font-size:25px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: $yellow;
+    letter-spacing: 7px;
+}
+
+
+h3 {
     cursor: pointer;
 }
 
-#pokemonName{
+#pokemonName {
     text-decoration: none;
     color: black
 }
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
