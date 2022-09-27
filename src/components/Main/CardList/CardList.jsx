@@ -14,11 +14,23 @@ const Main = () => {
   let arrData
 
   useEffect(() => {
+    if (pokemon != "") {
     async function fetchPokemon() {
       if (data.length === 0) {
         try {
           const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-          setData(res)
+          const res2 = await axios.get(`${res.data.forms[0].url}`)          
+          const pokdata = {
+            Id: res.data.id,
+            Name: res.data.name,
+            Img: res.data.sprites.other.dream_world,
+            TypeOne: res2.data.types[0].type.name
+          }  
+
+          if (res2.data.types.length>1) {
+            pokdata.TypeTwo = res2.data.types[1].type.name
+          }
+          setData(pokdata)
           setLoading(true)
         }
         catch (err) {
@@ -31,10 +43,21 @@ const Main = () => {
       } else {
         try {
           const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+          console.log(res.data.forms[0].url);
+          const res2 = await axios.get(`${res.data.forms[0].url}`)
+          const pokdata = {
+            Id: res.data.id,
+            Name: res.data.name,
+            Img: res.data.sprites.other.dream_world,
+            TypeOne: res2.data.types[0].type.name
+          }        
 
+
+          if (res2.data.types.length>1) {
+            pokdata.TypeTwo = res2.data.types[1].type.name
+          }
           arrData = [data]
-          let arrConcat = arrData.concat(res)
-
+          let arrConcat = arrData.concat(pokdata)
           let arrTotal = arrConcat.flat()
 
           setData(arrTotal)
@@ -50,7 +73,9 @@ const Main = () => {
       }
       ;
     }
-    fetchPokemon()
+    fetchPokemon()      
+    }
+
 
   }, [pokemon]);
 
