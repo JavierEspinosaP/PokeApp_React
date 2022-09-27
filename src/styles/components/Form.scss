@@ -1,0 +1,18 @@
+@import '../utils/variables.scss';
+
+.formContainer{
+    display:flex;
+    justify-content: center;    
+    margin-top:200px
+}
+
+.form{
+    font-size:20px;
+    text-align: center;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    width: 300px;
+    padding: 30px;
+    background-color: $bluegreen
+}

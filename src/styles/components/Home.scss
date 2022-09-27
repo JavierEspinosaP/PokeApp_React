@@ -1,0 +1,31 @@
+
+
+.home{
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+
+.cardContainer{
+    text-align: center;
+    border-style: solid;
+    padding: 5px;
+    margin: 5px;
+    min-width: 110px;
+    min-height: 80px;
+}
+
+#h1{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+h3{
+    cursor: pointer;
+}
+
+#pokemonName{
+    text-decoration: none;
+    color: black
+}
