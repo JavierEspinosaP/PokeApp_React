@@ -1,12 +1,36 @@
 @import '../utils/variables.scss';
 
 .card{
-    color: #fff;
-    background-color: $red;
-    margin: 40px auto;
+    color:$yellow;
+    font-size: 22px;
+    margin: 0 auto;
+    width: 400px;
+    background-color:rgb(189, 0, 0);
     border-style: solid;
-    border-width: 3px;
-    border-radius: 15px;
-    border-color:$bluegreen;
-    min-width: 200px;
+    border-radius: 10px;
+    border-width:5px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+}
+
+#imgContainer{
+    display:flex;
+    justify-content:center;
+    align-content: center;
+    background-color:rgb(0, 185, 253);
+    border-radius: 10px;
+    width: 300px;
+    height: 250px;
+}
+
+img{
+    width: 200px
+}
+
+a{
+    color:$yellow;
+    text-decoration: none;
 }

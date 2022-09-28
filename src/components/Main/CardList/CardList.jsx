@@ -14,7 +14,7 @@ const Main = () => {
   let arrData
 
   useEffect(() => {
-    if (pokemon != "") {
+    if (pokemon !== "") {
     async function fetchPokemon() {
       if (data.length === 0) {
         try {
@@ -23,7 +23,7 @@ const Main = () => {
           const pokdata = {
             Id: res.data.id,
             Name: res.data.name,
-            Img: res.data.sprites.other.dream_world,
+            Img: res.data.sprites.other.dream_world.front_default,
             TypeOne: res2.data.types[0].type.name
           }  
 
@@ -48,7 +48,7 @@ const Main = () => {
           const pokdata = {
             Id: res.data.id,
             Name: res.data.name,
-            Img: res.data.sprites.other.dream_world,
+            Img: res.data.sprites.other.dream_world.front_default,
             TypeOne: res2.data.types[0].type.name
           }        
 
@@ -96,11 +96,14 @@ const Main = () => {
 
   return (<div className="main">
 
-    <div>
-      <p htmlFor="search">Buscar Pokemon</p>
-      <input type="text" name="search" id="search" onChange={(e) => debounced(e.target.value)} />
-      <div id="cardContainer">{loading ? <Card /> : null}
+    <div id="searchView">
+      <div id="searchContainer">
+      <h1 htmlFor="search">Buscar Pokemon</h1>
+      <input type="text" name="search" id="search" onChange={(e) => debounced(e.target.value)} />        
       </div>
+      <div id="cardContainer">{loading ? <Card  /> : null} 
+      </div>
+     
     </div>
 
   </div>)

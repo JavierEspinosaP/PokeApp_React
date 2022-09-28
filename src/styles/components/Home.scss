@@ -24,11 +24,13 @@
     height: 250px;
     transition: 0.2s;
     filter: brightness(85%);
+
 }
 
 .cardContainer:hover{
-    box-shadow: $pink 0px 5px 15px;
+    box-shadow: rgb(0, 255, 247) 0px 5px 15px;
     filter: brightness(100%);
+    transform: scale(1.01);
 }
 
 #cardImg{
@@ -63,6 +65,28 @@ h3 {
     color: black
 }
 
+#spinnerHome{
+    margin-top: 200px;
+    animation: rotation 1s infinite linear;
+    width: 300px;
+}
+
+#spinnerContainer{
+    animation: 0.9s linear infinite slidein;    
+}
+
+@keyframes slidein {
+    from {
+      margin-left: 500%;
+      width: 100%;
+    }
+  
+    to {
+      margin-left: -750%;
+      width: 100%;
+    }
+  }
+
 @keyframes blink {
     50% {
         border-color: transparent;
@@ -75,5 +99,14 @@ h3 {
     }
     to {
       width: 100%;
+    }
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
     }
   }

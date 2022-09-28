@@ -1,12 +1,54 @@
 @import '../utils/variables.scss';
 
+#searchView{
+    min-height: 100vh
+}
+
+#search{
+    width:300px;
+    height: 40px;
+}
+
+
+#searchContainer h1{
+    font-size: 40px;
+    margin-top:0;
+}
+
+#searchContainer{
+    padding: 40px;
+    margin: 80px auto;
+    width: 500px;
+    background-color:rgb(189, 0, 0);
+    border-style: solid;
+    border-radius: 10px;
+    border-width:5px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .main{
-    background-color: $green;
+    background-color: $bluegreen;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    justify-content: flex-end;
 }
 
 #cardContainer{
     display: flex;
+    flex-wrap: wrap;
+    border-style: none;
+    background-color: $bluegreen;
+    margin: 40px;
+
 }
+
+h1 {
+    font-size:40px;
+    color:$yellow;
+    letter-spacing: 8px;
+    -webkit-text-stroke: 0.1px black;
+}
+

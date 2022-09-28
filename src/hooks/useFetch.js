@@ -13,11 +13,12 @@ const useFetch = (url) => {
         async function fetchData() {
             try {
                 const response = await axios.get(url)
-                // vamos a agregar un setTimeout a continuación del fetch para apreciar mejor el comportamiento del hook
-                // Dentro del setTimeout actualizaremos los dos estados de este hook (loading y result)
-                //Esto ya no está
+
+                setTimeout(() => {
                     setResult(response.data)
-                    setLoading(false)
+                    setLoading(false)                    
+                }, 800);
+
             } catch (err) {
                 console.log(err)
             }
