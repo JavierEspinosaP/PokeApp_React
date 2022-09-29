@@ -56,8 +56,8 @@ const Main = () => {
           if (res2.data.types.length>1) {
             pokdata.TypeTwo = res2.data.types[1].type.name
           }
-          arrData = [data]
-          let arrConcat = arrData.concat(pokdata)
+
+          let arrConcat = [data].concat(pokdata)
           let arrTotal = arrConcat.flat()
 
           setData(arrTotal)
@@ -86,13 +86,6 @@ const Main = () => {
       setPokemon(value)
     }, 1500
   )
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   setPokemon(e.target.search.value)
-  //   setLoading(false)
-  // };
-
-
 
   return (<div className="main">
 
