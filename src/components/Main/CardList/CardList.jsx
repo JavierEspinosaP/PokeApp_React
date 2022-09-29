@@ -10,9 +10,11 @@ const Main = () => {
 
   const [pokemon, setPokemon] = useState('')
   const [loading, setLoading] = useState(false)
-  const { setData, data } = useContext(pokeContext)
+  const { setData, data } = useContext(pokeContext) 
 
   useEffect(() => {
+
+
     if (pokemon !== "") {
     async function fetchPokemon() {
       if (data.length === 0) {
