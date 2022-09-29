@@ -47,7 +47,7 @@ const Details = () => {
     <div id="cardContainerDetail">
       {loading ? null : <p>Pokemon nº: {data.Id}</p>}
       {loading ? null : <h2>{data.Name}</h2>}
-      {loading ? <img className="spinner" src={Spinner} alt="spinner" /> : <div id="imgContainerDetail"><img id="imgDetail" src={data.Img.front_default} alt="Pokemon Image Detail" /></div>}
+      {loading ? <img className="spinner" src={Spinner} alt="spinner" /> : <div id="imgContainerDetail"><img id="imgDetail" src={data.Img.front_default} alt={"Img"+data.Id} /></div>}
       {loading ? null : <p>Tipo 1: {data.TypeOne}</p>}
       {loading ? null : <p>Tipo 2: {data.TypeTwo}</p>}
     </div>
