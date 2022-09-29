@@ -11,7 +11,6 @@ const Main = () => {
   const [pokemon, setPokemon] = useState('')
   const [loading, setLoading] = useState(false)
   const { setData, data } = useContext(pokeContext)
-  let arrData
 
   useEffect(() => {
     if (pokemon !== "") {
