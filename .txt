@@ -1,6 +1,3 @@
-import React, { useContext } from "react";
-
-
 import {useForm} from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
@@ -15,8 +12,6 @@ const schema = yup.object({
 
 let arrData
 
-const regex = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/
-
 const Form = () => {
 
   const { setData, data } = useContext(pokeContext)
@@ -27,22 +22,18 @@ const Form = () => {
   arrData = [data]
   const onSubmit = dataForm => setData([...arrData, dataForm]);
 
-  const imgError = "The image would be a valid url"
-  const idError = "The id must be positive and integer number"
-
   
 
     return <div className="formContainer">
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor="Id">Id:</label>
       <input type="text" {...register("Id", {required: true} )}/>
-      <p>{errors.Id?idError:null}</p>
+      <p>{errors.id?.message}</p>
       <label htmlFor="Name">Nombre:</label>
       <input type="text" {...register("Name", {min: 3, required: true})}/>
-      <p>{errors.Name?.message}</p>
+      <p>{errors.name?.message}</p>
       <label htmlFor="Img">Imagen:</label>
-      <input type="text" {...register("Img", {required: true, pattern: regex})}/>
-      <p>{errors.Img?imgError: null}</p>
+      <input type="text" {...register("Img", {required: true})}/>
       <label htmlFor="TypeOne">Tipo 1:</label>
       <select name="TypeOne" {...register("TypeOne", {required: true})} aria-invalid={errors.img ? "true" : "false"}>
         <option value="agua">Agua</option>
@@ -54,7 +45,7 @@ const Form = () => {
         <option value="veneno">Veneno</option>
         <option value="volador">Volador</option>
       </select>
-      {errors.TypeOne?.type === 'required' && <p role="alert">Type is required</p>}
+      {errors.typeOne?.type === 'required' && <p role="alert">Type is required</p>}
       <label htmlFor="TypeTwo">Tipo 2:</label>
       <select name="TypeTwo" {...register("TypeTwo")}>
         <option value=""></option>
@@ -76,4 +67,3 @@ const Form = () => {
 
 
 export default Form;
-

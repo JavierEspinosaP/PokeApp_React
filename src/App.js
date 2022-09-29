@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-import CardList from './components/Main/CardList'
 import { BrowserRouter } from 'react-router-dom';
 import './styles/styles.scss';
 import { pokeContext } from './context/pokeContext';

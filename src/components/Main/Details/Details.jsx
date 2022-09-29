@@ -47,24 +47,24 @@ const Details = () => {
     <div id="cardContainerDetail">
       {loading ? null : <p>Pokemon nº: {data.Id}</p>}
       {loading ? null : <h2>{data.Name}</h2>}
-      {loading ? <img id="spinner" src={Spinner} alt="spinner" /> : <div id="imgContainerDetail"><img id="imgDetail" src={data.Img.front_default} alt="Pokemon Image Detail" /></div>}
+      {loading ? <img className="spinner" src={Spinner} alt="spinner" /> : <div id="imgContainerDetail"><img id="imgDetail" src={data.Img.front_default} alt="Pokemon Image Detail" /></div>}
       {loading ? null : <p>Tipo 1: {data.TypeOne}</p>}
       {loading ? null : <p>Tipo 2: {data.TypeTwo}</p>}
     </div>
     <div id="statsContainer">
     {loading ? null : <h2>Stats</h2>}
 
-    {loading ? <img id="spinner" src={Spinner} alt="spinner" /> : data.Stats.map(s => (<div><p>{s.stat.name}: {s.base_stat}</p></div>))}
+    {loading ? <img className="spinner" src={Spinner} alt="spinner" /> : data.Stats.map(s => (<div><p>{s.stat.name}: {s.base_stat}</p></div>))}
     </div>
 
     <div id="gamesContainer">
     {loading ? null : <h2>Algunos juegos en los que aparece</h2>}
-    {loading ? <img id="spinner" src={Spinner} alt="spinner" /> : data.Games.map(g => (<div><p>- {g.version.name}</p></div>)).slice(0,6)}
+    {loading ? <img className="spinner" src={Spinner} alt="spinner" /> : data.Games.map(g => (<div><p>- {g.version.name}</p></div>)).slice(0,6)}
     </div>
 
     <div id="zonesContainer">
     {loading ? null : <h2>Algunas zonas en las que puede aparecer</h2>}
-    {loading ? <img id="spinner" src={Spinner} alt="spinner" /> : data.Zones.map(z => (<div><p>- {z.location_area.name}</p></div>)).slice(0,6)}
+    {loading ? <img className="spinner" src={Spinner} alt="spinner" /> : data.Zones.map(z => (<div><p>- {z.location_area.name}</p></div>)).slice(0,6)}
 
     </div>
 
