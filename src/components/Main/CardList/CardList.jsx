@@ -10,6 +10,7 @@ const Main = () => {
 
   const [pokemon, setPokemon] = useState('')
   const [loading, setLoading] = useState(false)
+  // eslint-disable-next-line
   const {setData, data} = useContext(pokeContext) 
 
   useEffect(() => {
@@ -77,7 +78,7 @@ const Main = () => {
     fetchPokemon()      
     }
 
-
+  // eslint-disable-next-line
   }, [pokemon]);
 
 
