@@ -1,6 +1,5 @@
 import React from "react";
 import Nav from './Nav'
-import Player from './Nav/Player'
 
 const Header = () => {
 

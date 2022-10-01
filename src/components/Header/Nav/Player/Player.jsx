@@ -123,9 +123,11 @@ class Player extends React.Component {
         </div>
 
         <Button  onClick={this.handleToggle}>
+{/* eslint-disable-next-line */}
           {(this.state.playing) ? <img className='buttonPlayer' src={Pause}></img> : <img className='buttonPlayer' src={Play}></img>}
         </Button>
         <Button  onClick={this.handleStop}>
+          {/* eslint-disable-next-line */}
         <img className='buttonPlayer' src={Stop}></img>
         </Button>
       </div>
