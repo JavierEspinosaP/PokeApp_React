@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+Para este proyecto se necesitaba crear una aplicación web que consumiera datos de la API de 'pokeapi.co' y tuviera cuatro vistas con distintas funcionalidades, creada con React funcional, además debía utilizar SASS para los estilos, debounce para el input de búsqueda y un template de formulario.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+La estructura de la página es el estandar "Header-Main-Footer", en el Header tenemos un navbar con tres links a las distintas vistas.
 
-## Available Scripts
+En la vista "Home" encontramos un listado de todos los pokemons, representados en tarjetas y con su nombre, si pinchamos en alguno de ellos nos llevará a la cuarta vista, la vista detalle del pokemon seleccionado.
 
-In the project directory, you can run:
 
-### `npm start`
+![Home](https://user-images.githubusercontent.com/103537170/193199589-41772df1-b42d-4127-8cb7-1fdd671d5937.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+La siguiente vista es la de creación de un pokemon, en ella se encuentra un formulario de registro en el que se piden unos datos, el formulario tiene una validación concreta que se pedía en el proyecto y está implementado con React Hook Form, si introducimos correctamente los datos, al hacer una nueva búsqueda nos aparecerá el pokemon creado junto a los demás.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+![Formulario](https://user-images.githubusercontent.com/103537170/193199921-6a6dcf7c-80e3-49d3-9dfe-cda0ca50bdca.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+La última vista del navbar es la de búsqueda de pokemon, esta es una vista simple con un input de búsqueda, que lleva implementado un debouncer, cuando el usuario para de escribir, a los 1,5 segundos se lanza la búsqueda a la API y se recoge el pokemon buscado, si no existe, se lanzará un modal de error avisando de ello
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![buscar](https://user-images.githubusercontent.com/103537170/193200250-30530679-2c61-4bb7-812f-16c95d98509a.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+![buscar 2](https://user-images.githubusercontent.com/103537170/193200618-1c919deb-ab10-47ce-b12c-e6c527eb4c1e.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Por último tenemos la vista detalle, a la que se accede o bien a través de la Home pinchando en una tarjeta de pokemon, o bien a través del link incluido en la tarjeta del pokemon buscado con el buscador, en esta vista se ofrecen distintos datos consumidos de la API así como una imagen en buena calidad del mismo.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![detalle](https://user-images.githubusercontent.com/103537170/193200710-6b661c49-c2eb-4480-a9e6-81736fdd8157.png)
 
-## Learn More
+Con este proyecto he profundizado en el tratamiento de datos a una API, asentado los conocimientos de React funcional así como el manejo de estilos con SASS y he utilizado herramientas como el debounce o un hook externo para el formulario y el fetch.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
