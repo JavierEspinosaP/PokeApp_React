@@ -107,7 +107,7 @@ class Player extends React.Component {
 
         <div className='volume'>
           <label>
-            Volume:
+            Volumen:
             <span className='slider-container'>
               <input
                 type='range'
