@@ -3,10 +3,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 @import '../utils/variables.scss';
+
+
+@font-face{
+    font-family: 'pokemon';
+    src: local("font_pok"),
+    url("../../assets/font_pok.ttf") format("truetype");
+}
+
 .App {
     text-align: center;
     letter-spacing: 4px;
-    font-family: 'Pokemon Solid', sans-serif;
+    font-family: 'pokemon', sans-serif;
     background-color: $bluegreen;
     min-height: 100vh
 }
