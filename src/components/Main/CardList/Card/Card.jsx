@@ -19,7 +19,7 @@ let urlImg = "https://raw"
      {d.Img?<div className="imgContainer"><img src={d.Img} alt={"Image"+d.Id} /></div>:null}     
      {d.TypeOne?<p>Tipo 1: {d.TypeOne}</p>:null}
      {d.TypeTwo?<p>Tipo 2: {d.TypeTwo}</p>:null}
-     {d.Img.slice(0,11) == urlImg ?<Link to={'/pokemon/'+ (Number(d.Id)-1)}><p>Vista detalle de {d.Name}</p></Link>:null}
+     {d.Img.slice(0,11) === urlImg ?<Link to={'/pokemon/'+ (Number(d.Id)-1)}><p>Vista detalle de {d.Name}</p></Link>:null}
       </div>))
 
     )
