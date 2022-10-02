@@ -57,7 +57,7 @@ class Player extends React.Component {
     this.setState({
       playing: true
     })
-    this.renderSeekPos()
+    // this.renderSeekPos()
   }
 
   handleOnEnd () {
@@ -75,16 +75,16 @@ class Player extends React.Component {
     this.renderSeekPos()
   }
 
-  renderSeekPos () {
-    if (!this.state.isSeeking) {
-      this.setState({
-        seek: this.player.seek()
-      })
-    }
-    if (this.state.playing) {
-      this._raf = raf(this.renderSeekPos)
-    }
-  }
+  // renderSeekPos () {
+  //   if (!this.state.isSeeking) {
+  //     this.setState({
+  //       seek: this.player.seek()
+  //     })
+  //   }
+  //   if (this.state.playing) {
+  //     this._raf = raf(this.renderSeekPos)
+  //   }
+  // }
 
 
   clearRAF () {

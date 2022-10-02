@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import Spinner from '../../../assets/spinner.png'
+import Spinner from '../../../assets/spinner.png';
+import uuid4 from "uuid4";
 
 
 const Details = () => {
@@ -42,27 +43,27 @@ const Details = () => {
   fetchPokemon()
 
 
-  return <div className="detail">
+  return <div className="detail" key={uuid4()}>
 
-    <div id="cardContainerDetail">
+    <div id="cardContainerDetail" key={uuid4()}>
       {loading ? null : <p>Pokemon nº: {data.Id}</p>}
       {loading ? null : <h2>{data.Name}</h2>}
       {loading ? <img className="spinner" src={Spinner} alt="spinner" /> : <div id="imgContainerDetail"><img id="imgDetail" src={data.Img.front_default} alt={"Img"+data.Id} /></div>}
       {loading ? null : <p>Tipo 1: {data.TypeOne}</p>}
       {loading ? null : <p>Tipo 2: {data.TypeTwo}</p>}
     </div>
-    <div id="statsContainer">
+    <div id="statsContainer" key={uuid4()}>
     {loading ? null : <h2>Stats</h2>}
 
     {loading ? <img className="spinner" src={Spinner} alt="spinner" /> : data.Stats.map(s => (<div><p>{s.stat.name}: {s.base_stat}</p></div>))}
     </div>
 
-    <div id="gamesContainer">
+    <div id="gamesContainer" key={uuid4()}>
     {loading ? null : <h2>Algunos juegos en los que aparece</h2>}
     {loading ? <img className="spinner" src={Spinner} alt="spinner" /> : data.Games.map(g => (<div><p>- {g.version.name}</p></div>)).slice(0,6)}
     </div>
 
-    <div id="zonesContainer">
+    <div id="zonesContainer" key={uuid4()}>
     {loading ? null : <h2>Algunas zonas en las que puede aparecer</h2>}
     {loading ? <img className="spinner" src={Spinner} alt="spinner" /> : data.Zones.map(z => (<div><p>- {z.location_area.name}</p></div>)).slice(0,6)}
 
