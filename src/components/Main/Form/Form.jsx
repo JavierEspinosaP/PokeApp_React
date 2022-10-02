@@ -27,7 +27,7 @@ const Form = () => {
   arrData = [data]
   let sliceData = []
   let arrPokemon = [arrData]
-if(arrPokemon[0].flat().length == 0){
+if(arrPokemon[0].flat().length === 0){
   sliceData = arrData[0].flat(arrData.length).slice(1)
 }
   const onSubmit = dataForm => {
