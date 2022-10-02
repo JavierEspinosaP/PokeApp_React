@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-
+import Swal from 'sweetalert2'
 import {useForm} from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
@@ -25,7 +25,22 @@ const Form = () => {
     resolver: yupResolver(schema)
   });
   arrData = [data]
-  const onSubmit = dataForm => setData([...arrData, dataForm]);
+  let sliceData = []
+  let arrPokemon = [arrData]
+if(arrPokemon[0].flat().length == 0){
+  sliceData = arrData[0].flat(arrData.length).slice(1)
+}
+  const onSubmit = dataForm => {
+    
+    setData([...sliceData, dataForm]);
+    Swal.fire({
+      title: `Pokemon creado!`,
+      icon: 'success',
+      confirmButtonText: 'Yuhu!!!'
+    })
+  }
+  
+
 
   const imgError = "The image would be a valid url"
   const idError = "The id must be positive and integer number"

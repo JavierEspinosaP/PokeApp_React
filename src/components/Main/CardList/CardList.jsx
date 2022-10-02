@@ -6,6 +6,7 @@ import { useDebouncedCallback } from 'use-debounce';
 import Swal from 'sweetalert2'
 
 
+
 const Main = () => {
 
   const [pokemon, setPokemon] = useState('')
@@ -45,7 +46,6 @@ const Main = () => {
       } else {
         try {
           const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-          console.log(res.data.forms[0].url);
           const res2 = await axios.get(`${res.data.forms[0].url}`)
           const pokdata = {
             Id: res.data.id,

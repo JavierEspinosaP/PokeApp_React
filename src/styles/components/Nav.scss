@@ -4,7 +4,7 @@
     display: flex;
     justify-content:space-evenly;
     background-color: $blue;
-
+    align-items:center;
 }
 
 .nav-link{
@@ -12,11 +12,18 @@
     text-decoration: none;
     color: #fff;  
     transition: 0.1s ;
-    margin-left:50px 
+    margin: 20px 0 20px 20px;
+    text-align: center;
 }
 
 .nav-link:hover{
     color:$yellow;
+}
+
+@media screen and (max-width: 768px){
+.nav{
+    flex-wrap: wrap;
+}
 }
 
 
