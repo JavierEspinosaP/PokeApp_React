@@ -25,7 +25,14 @@ const Form = () => {
     resolver: yupResolver(schema)
   });
   arrData = [data]
-  const onSubmit = dataForm => setData([...arrData, dataForm]);
+  let sliceData = []
+if(arrData[0].flat(arrData.length).length == 0){
+  sliceData = arrData[0].flat(arrData.length).slice(1)
+}
+console.log(sliceData);
+  const onSubmit = dataForm => setData([...sliceData, dataForm]);
+  
+
 
   const imgError = "The image would be a valid url"
   const idError = "The id must be positive and integer number"

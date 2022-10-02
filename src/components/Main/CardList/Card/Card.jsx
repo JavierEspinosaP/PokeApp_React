@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 
 const Card = () => {
 const {data} = useContext(pokeContext)
-
-
 let pokData = [data].flat()
 console.log(pokData);
 
@@ -18,7 +16,7 @@ console.log(pokData);
      {d.Img?<div id="imgContainer"><img src={d.Img} alt={"Image"+d.Id} /></div>:null}     
      {d.TypeOne?<p>Tipo 1: {d.TypeOne}</p>:null}
      {d.TypeTwo?<p>Tipo 2: {d.TypeTwo}</p>:null}
-     <Link to={'/pokemon/'+ (Number(d.Id)-1)}><p>Vista detalle de {d.Name}</p></Link>
+     {d.Id?<Link to={'/pokemon/'+ (Number(d.Id)-1)}><p>Vista detalle de {d.Name}</p></Link>:null}
       </div>))
 
     )
