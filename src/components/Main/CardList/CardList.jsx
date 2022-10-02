@@ -85,7 +85,7 @@ const Main = () => {
   const debounced = useDebouncedCallback(
     (value) => {
     
-      setPokemon(value)
+      setPokemon(value.toLowerCase())
     }, 1500
   )
 
