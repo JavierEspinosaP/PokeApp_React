@@ -72,7 +72,7 @@ class Player extends React.Component {
     this.setState({
       playing: false // Need to update our local state so we don't immediately invoke autoplay
     })
-    this.renderSeekPos()
+    // this.renderSeekPos()
   }
 
   // renderSeekPos () {

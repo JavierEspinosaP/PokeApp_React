@@ -55,17 +55,17 @@ const Details = () => {
     <div id="statsContainer" key={uuid4()}>
     {loading ? null : <h2>Stats</h2>}
 
-    {loading ? <img className="spinner" src={Spinner} alt="spinner" /> : data.Stats.map(s => (<div><p>{s.stat.name}: {s.base_stat}</p></div>))}
+    {loading ? <img className="spinner" src={Spinner} alt="spinner" /> : data.Stats.map(s => (<div key={uuid4()}><p>{s.stat.name}: {s.base_stat}</p></div>))}
     </div>
 
     <div id="gamesContainer" key={uuid4()}>
     {loading ? null : <h2>Algunos juegos en los que aparece</h2>}
-    {loading ? <img className="spinner" src={Spinner} alt="spinner" /> : data.Games.map(g => (<div><p>- {g.version.name}</p></div>)).slice(0,6)}
+    {loading ? <img className="spinner" src={Spinner} alt="spinner" /> : data.Games.map(g => (<div key={uuid4()}><p>- {g.version.name}</p></div>)).slice(0,6)}
     </div>
 
     <div id="zonesContainer" key={uuid4()}>
     {loading ? null : <h2>Algunas zonas en las que puede aparecer</h2>}
-    {loading ? <img className="spinner" src={Spinner} alt="spinner" /> : data.Zones.map(z => (<div><p>- {z.location_area.name}</p></div>)).slice(0,6)}
+    {loading ? <img className="spinner"   src={Spinner} alt="spinner" /> : data.Zones.map(z => (<div key={uuid4()}><p>- {z.location_area.name}</p></div>)).slice(0,6)}
 
     </div>
 

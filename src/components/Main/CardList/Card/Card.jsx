@@ -7,12 +7,12 @@ import uuid4 from "uuid4";
 const Card = () => {
 const {data} = useContext(pokeContext)
 let pokData = [data].flat()
-
 let urlImg = "https://raw"
 
     return(
 
       pokData.map( d=>(
+
     <div key={uuid4()} className="card">
      {d.Id?<p>Pokemon nº: {d.Id}</p>:null}
      {d.Name?<h5>Nombre: {d.Name}</h5>:null}

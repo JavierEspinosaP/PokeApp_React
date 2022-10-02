@@ -10,12 +10,12 @@ import {pokeContext} from '../../../context/pokeContext'
 const schema = yup.object({
   Name: yup.string().required().min(3),
   Id: yup.number().positive().integer().required(),
-  Img: yup.string().required()
+  // Img: yup.string().required()
 }).required();
 
 let arrData
 
-const regex = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_+.~#?&/=]*)$/
+// const regex = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_+.~#?&/=]*)$/
 
 const Form = () => {
 
@@ -30,8 +30,15 @@ const Form = () => {
 if(arrPokemon[0].flat().length === 0){
   sliceData = arrData[0].flat(arrData.length).slice(1)
 }
-  const onSubmit = dataForm => {
-    
+  const onSubmit = form => {
+    let img = URL.createObjectURL(form.Img[0])
+    let dataForm = {
+      Id: form.Id,
+      Img: img,
+      Name: form.Name,
+      TypeOne: form.TypeOne,
+      TypeTwo: form.TypeTwo
+    }
     setData([...sliceData, dataForm]);
     Swal.fire({
       title: `Pokemon creado!`,
@@ -42,7 +49,7 @@ if(arrPokemon[0].flat().length === 0){
   
 
 
-  const imgError = "The image would be a valid url"
+  const imgError = "The image would be a valid .png file"
   const idError = "The id must be positive and integer number"
 
   
@@ -56,7 +63,8 @@ if(arrPokemon[0].flat().length === 0){
       <input type="text" {...register("Name", {min: 3, required: true})}/>
       <p>{errors.Name?.message}</p>
       <label htmlFor="Img">Imagen:</label>
-      <input type="text" {...register("Img", {required: true, pattern: regex})}/>
+      <input type="file" accept=".png" {...register("Img", {required: true })}/>
+      {/* pattern: regex */}
       <p>{errors.Img?imgError: null}</p>
       <label htmlFor="TypeOne">Tipo 1:</label>
       <select name="TypeOne" {...register("TypeOne", {required: true})} aria-invalid={errors.img ? "true" : "false"}>
