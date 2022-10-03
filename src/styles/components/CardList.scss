@@ -52,3 +52,9 @@ h1 {
     -webkit-text-stroke: 0.1px black;
 }
 
+@media screen and (max-width: 768px) {
+    #searchContainer{
+        width: 270px;
+    }
+}
+
