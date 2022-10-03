@@ -1,3 +1,6 @@
+La web puede visitarse desplegada en el siguiente link: https://guileless-kataifi-7075de.netlify.app/
+
+
 Para este proyecto se necesitaba crear una aplicación web que consumiera datos de la API de 'pokeapi.co' y tuviera cuatro vistas con distintas funcionalidades, creada con React funcional, además debía utilizar SASS para los estilos, debounce para el input de búsqueda y un template de formulario.
 
 La estructura de la página es el estandar "Header-Main-Footer", en el Header tenemos un navbar con tres links a las distintas vistas.
